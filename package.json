@@ -4,7 +4,7 @@
   "description": "A Web client for an educational game about risk calculation.",
   "main": "src/js/app.ts",
   "scripts": {
-   "build": "NODE_ENV=production APP_PATH=https://investordefend-1-client.herokuapp.com/API_URL=https://investordefend-1-client.herokuapp.com/ webpack --config ./webpack.config.ts --mode=production",
+    "build": "SET NODE_ENV=production & webpack --config ./webpack.config.ts --mode=production",
    "dev": "webpack serve",
     "start": "node server.js",
     "start:dev": "webpack-dev-server --config ./webpack.config.ts",
