@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page">
+
+	{{> partials/head title=htmlWebpackPlugin.options.title }}
+  
+	<body class="page__body">
+  
+		{{> partials/header no-logout-button=true }}
+
+		<main class="page__main page__main--form">
+			<form method="POST" id="signin" class="form">
+				<h1 class="form__title">Please sign in</h1>
+				
+				<label class="form__label form__label--above" for="username">Username <span class="label__note">(same as your email address)</span></label>
+				<input class="form__control form__input form__input--text" type="email" id="username" placeholder="Username" required autofocus>
+				<label class="form__label form__label--above" for="password">Password</label>
+				<input class="form__control form__input form__input--text" type="password" id="password" placeholder="Password" required>
+				<input class="button form__control form__input form__input--submit" type="submit" value="Sign in"></input>
+			</form>
+
+			<div class="form__links">
+				<span class="form__link"><a href="signup.html">Don't have an account? Sign up here.</a></span>
+				<!--<span class="form__link"><a href="forgot-password.html">Forgot password? Reset it here.</a></span>-->
+			</div>
+		</main>
+		
+		{{> partials/footer no-back-button=true no-report-issue-link=true }}
+	</body>
+  
+</html>

@@ -1,0 +1,49 @@
+/*
+ *  *Invest or Defend* master stylesheet.
+ */
+
+/*
+* {
+	box-sizing: border-box;
+}
+*/
+
+/* Custom Variables */
+
+@import "_variables/";
+
+/* Page Styling. */
+
+@import "_page";
+
+@import "_header";
+
+@import "_footer";
+
+/* Input Styling. */
+
+@import "_form";
+
+@import "_button";
+
+/* Content Styling. */
+
+@import "_menu";
+
+@import "_modal";
+
+@import "_text";
+
+@import "_details";
+
+@import "_tile";
+
+@import "_table";
+
+/* Game Styling. */
+
+@import "_game/";
+
+/* Animations. */
+
+@import "_animation";

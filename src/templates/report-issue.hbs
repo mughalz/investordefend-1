@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="page">
+
+	{{> partials/head title=htmlWebpackPlugin.options.title }}
+  
+	<body class="page__body">
+  
+		{{> partials/header no-logout-button=true }}
+
+		<main class="page__main page__main--form">
+			<form method="POST" id="report-issue" class="form">
+				<h1 class="form__title">Report an Issue</h1>
+				
+				<label class="form__label form__label--above" for="issue-summary">Summary</label>
+				<input class="form__control form__input form__input--text" type="text" id="issue-summary" placeholder="Summary of the issue" required autofocus>
+
+				<label class="form__label form__label--above" for="issue-description">Description</label>
+				<textarea class="form__control form__textarea" id="issue-description" placeholder="Describe your issue" cols=60 rows=20 required></textarea>
+
+				<input class="button form__control form__input form__input--submit" type="submit" value="Submit Report"></input>
+			</form>
+		</main>
+		
+		{{> partials/footer }}
+	</body>
+  
+</html>

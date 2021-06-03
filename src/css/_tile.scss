@@ -1,0 +1,119 @@
+/*
+ * Tile stylesheet.
+ */
+
+.tile {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    "tile-header"
+    "tile-main"
+    "tile-footer";
+  grid-template-rows: 20% 55% 20%;
+  grid-template-columns: auto;
+  align-items: center;
+  box-sizing: border-box;
+	width: 100%;
+	height: auto;
+  padding: 1em;
+  color: $tile-text-colour;
+  background-color: $tile-bg-colour; 
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  
+  &:hover, &:focus {
+  	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  &--selectable {
+    cursor: pointer;
+    opacity: 0.75;
+
+    &:hover, &:focus {
+      opacity: 1;
+    }
+  }
+
+  &--selected {
+    opacity: 0.4;
+  }
+  
+  &__header {
+ 		grid-area: tile-header; 
+ 		
+ 		& .tile-header {
+ 			&__title {
+ 				font-weight: bold;
+ 				font-size: 2em;
+
+        &--small {
+          font-size: 1.5em;
+        }
+ 			}
+ 			
+ 			&-title__before {
+ 				display: block;
+ 				font-size: 0.4em;
+ 			}
+ 		} 	
+  }
+  
+  &__main {
+    display: grid;
+  	grid-area: tile-main;
+    grid-gap: 1em;
+    grid-template-areas:
+      "tile-main-image"
+      "tile-main-desc";
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto;
+  	
+ 		& .tile-main {
+ 			&__image {
+ 				display: block;
+        grid-area: tile-main-image;
+ 				width: 100%;
+ 				height: auto;
+ 			}
+ 			
+ 			&__description {
+        grid-area: tile-main-desc;
+ 				margin: 0 1em;
+        font-size: 0.8em;
+ 				text-align: justify;
+ 			}
+ 		} 	
+  }	
+  
+  &__footer {
+  	grid-area: tile-footer;
+  	
+ 		& .tile-footer {
+ 			&__text {
+ 				font-weight: bold;
+ 				font-size: 0.8em;
+ 				text-align: center;
+ 			}
+
+      &__button {
+        margin-top: 1em;
+      }
+
+      &__list {
+        padding-top: 0.5em;
+      }
+
+      &__list-item {
+        font-weight: normal;
+        font-size: 0.7em;
+      }
+
+      &__group {
+        width: 75%;
+        margin: auto;
+        margin-top: 0.5em;
+        padding: 0.5em;
+        border: 1px dashed gray;
+      }
+ 		} 	
+  }
+}

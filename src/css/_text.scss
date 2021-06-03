@@ -1,0 +1,73 @@
+/*
+ * Text (`<a>`, `<p>`, `<span>`, etc.) element stylesheet.
+ *
+ * @todo Refactor.
+ */
+
+a {
+  color: $link-colour;
+}
+
+a:visited {
+  color: $link-visited-colour;
+}
+
+a:hover,
+a:focus {
+  color: $link-focus-colour;
+  text-decoration: none;
+}
+
+.sidebar__text {
+  font-size: 1.2em;
+}
+
+.text--value {
+  font-weight: bold;
+}
+
+.currency::before {
+  float: left;
+  padding-right: 2px;
+  content: "\00a3"; /* £ */
+}
+
+span {
+  &.positive {
+    color: $text-positive-colour;
+  }
+
+  &.negative {
+    color: $text-negative-colour;
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italics;
+}
+
+/* Temporary. */
+.dummy-data {
+  color: $text-dummy-colour;
+}
+
+.banner__text {
+  display: inline;
+  float: left;
+  padding: 0.4em 0 0.5em 0.5em;
+  font-size: 1.5em;
+
+  & .text__value {
+    font-style: italic;
+
+    & #control-to-place-name {
+      display: block;
+      margin-top: 0.35em;
+      font-size: 0.7em;
+    }
+  }
+}

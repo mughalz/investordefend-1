@@ -1,0 +1,32 @@
+/*
+ * Menu stylesheet.
+ */
+
+.menu {
+  &__title {
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+
+  &__list {
+    text-align: center;
+    list-style: none;
+  }
+
+  &__item {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-size: 1.6em;
+
+    &__link {
+      color: white;
+
+      &:hover, &:focus {
+        color: #ddd;
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+/*
+ * Table stylesheet.
+ */
+
+.table {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background-color: $table-bg-colour;
+
+  &__header {
+    width: 100%;
+
+    &__cell {
+      font-weight: bold;
+    }
+  }
+
+  &__cell {
+    display: table-cell;
+    padding: 0.5em 1em;
+    text-align: left;
+    border: 1px solid black;
+
+    /* stylelint-disable no-descending-specificity */
+    & .button {
+      max-width: 100%;
+      margin: auto;
+      padding: 0.25em 0.5em;
+    }
+    /* stylelint-enable no-descending-specificity */
+  }
+
+  &__row {
+    position: relative;
+  }
+
+  &__body {
+    width: 100%;
+    overflow: auto;
+    font-size: 0.75em;
+  }
+
+  &__list {
+    margin-left: 1em;
+    text-align: left;
+    list-style: circle;
+
+    &__item {
+      margin: 0.5em;
+    }
+  }
+
+  &__icon {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 5em;
+    margin: auto;
+  }
+  /* stylelint-disable no-descending-specificity */
+  &--3-columns {
+    & .table__cell {
+      width: 50%;
+    }
+  }
+
+  &--4-columns {
+    & .table__cell {
+      &:nth-child(1) {
+        width: 50%;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        width: 20%;
+      }
+    }
+  }
+
+  &--5-columns {
+    & .table__cell {
+      &:nth-child(1),
+      &:nth-child(5) {
+        width: 15%;
+      }
+
+      &:nth-child(2) {
+        width: 35%;
+      }
+
+      &:nth-child(3) {
+        width: 10%;
+      }
+
+      &:nth-child(4) {
+        width: 25%;
+      }
+    }
+  }
+
+  &--6-columns {
+    & .table__cell {
+      &:nth-child(1) {
+        width: 10%;
+
+        &:not(.table__header__cell) {
+          vertical-align: middle;
+        }
+      }
+
+      &:nth-child(2) {
+        width: 15%;
+      }
+
+      &:nth-child(3) {
+        width: 30%;
+      }
+
+      &:nth-child(4) {
+        width: 10%;
+      }
+
+      &:nth-child(5) {
+        width: 20%;
+      }
+
+      &:nth-child(6) {
+        width: 25%;
+      }
+    }
+  }
+  /* stylelint-enable no-descending-specificity */
+}

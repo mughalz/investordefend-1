@@ -1,0 +1,104 @@
+/*
+ * Form stylesheet.
+ */
+
+.form {
+  display: block;
+  grid-area: form;
+  width: auto;
+  min-width: 500px;
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5em;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+
+  &__title {
+    margin: auto;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    font-size: 1.5em;
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+
+  &__subtitle {
+    font-size: 1.2em;
+    text-decoration: underline;
+  }
+
+  &__group {
+    width: 80%;
+    margin: auto;
+    margin-top: 1em;
+    padding: 1em;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  &__link {
+    display: block;
+    margin: 0.4em 0;
+  }
+
+  &__label {
+    margin: 0.75em auto 0.25em auto;
+    font-size: 1em;
+
+    &--optional {
+      &::after {
+        margin-left: 0.5em;
+        font-size: 0.8em;
+        content: "(optional)";
+      }
+    }
+
+    &--above {
+      display: block;
+      width: auto;
+      text-align: center;
+    }
+
+    & .label {
+      &__note {
+        display: block;
+        margin-top: 0.2em;
+        font-size: 0.75em;
+
+        &--inline {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__control {
+    width: auto;
+    max-width: 700px;
+    margin: 0.75em auto 0.25em auto;
+
+    &.form {
+      &__input {
+        padding: 0.8em;
+        border-radius: 10px;
+      }
+
+      &__input:not([type="checkbox"]):not([type="radio"]),
+      &__select {
+        display: block;
+      }
+
+      &__select {
+        width: 75%;
+        max-width: 700px;
+        padding: 0.6em 0;
+        border-radius: 10px 0 0 10px;
+      }
+    }
+  }
+}
+
+.page__main .form__links {
+  grid-area: links;
+}

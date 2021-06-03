@@ -1,0 +1,42 @@
+/*
+ * `<details>` element stylesheet.
+ */
+
+.details {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 0.5em;
+  padding: 18px;
+  text-align: left;
+  background-color: $details-bg-colour;
+  border: 1px solid white;
+  outline: none;
+  cursor: pointer;
+}
+
+.details:hover, .details:focus {
+  background-color: $details-hover-bg-colour;
+}
+
+.details[open] {
+  background-color: $details-open-bg-colour;
+}
+
+.form .details__content {
+  text-align: center;
+}
+
+.details__content .text {
+  line-height: 1em;
+}
+
+.details__summary {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.details[open] .details__summary {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid white;
+}

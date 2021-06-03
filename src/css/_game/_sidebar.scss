@@ -1,0 +1,86 @@
+/*
+ * Game sidebar stylesheet.
+ *
+ * @todo Make toggleable.
+ */
+
+.game__sidebar {
+	position: absolute;
+	right: 0;
+	display: grid;
+	grid-template-areas:
+		"sidebar-header"
+		"sidebar-main"
+		"sidebar-footer";
+	grid-template-rows: 20em auto 6em;
+	grid-template-columns: 1fr;
+	max-width: 20vw;
+	height: 100%;
+	padding-left: $sidebar-hide-button-width;
+	background-color: $game-sidebar-bg-colour;
+
+	.sidebar {
+		&__header {
+		  grid-area: sidebar-header;
+		  padding: 2em;
+		}
+		
+		&__title {
+		  margin-top: 2em;
+		  margin-bottom: 0.5em;
+		  font-weight: bold;
+		  font-size: 2em;
+		  text-align: center;
+		}
+
+		&__main {
+		  display: grid;
+		  grid-area: sidebar-main;
+		  grid-gap: 1em;
+		  grid-template-areas:
+		    "controls"
+		    "simulate-turn"
+		    "event-log";
+		  grid-template-rows: auto auto 1fr;
+		  grid-template-columns: 1fr;
+		  padding: 2em;
+		}
+
+		&__org-stats {
+		  text-align: center;
+		}
+
+		&__controls {
+		  grid-area: controls;
+		  text-align: center;
+		}
+
+		&__event-log {
+		  display: block;
+		  grid-area: event-log;
+		  max-height: 250px;
+		  overflow: scroll;
+		}
+
+		&__footer {
+		  grid-area: sidebar-footer;
+		  padding: 2em;
+		  text-align: center;
+		}
+	}
+	
+	& .button#hide-sidebar > #sidebar-arrow {
+		display: block;
+		rotate: 0deg;
+		font-size: 2em;
+	}
+
+	&.collapsed {
+		max-width: 0;
+		overflow: hidden;
+		
+		& .button#hide-sidebar > #sidebar-arrow {
+			rotate: 180deg;
+		}
+	}
+}

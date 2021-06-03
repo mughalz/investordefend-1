@@ -1,0 +1,8 @@
+<header class="page__header{{#if no-logout-button }} page__footer--no-logout-button{{/if}}">
+	<h1 class="header__title header__title--game">Invest or Defend</h1>
+	<h2 class="header__subtitle header__subtitle--game">An educational online game about information security.</h2>
+	
+	{{#unless no-logout-button }}
+		<button class="button header__button header__button--logout" id="logout" type="button">Log Out</button>
+	{{/unless }}
+</header>

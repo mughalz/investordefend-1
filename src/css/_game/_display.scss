@@ -1,0 +1,156 @@
+/*
+ * Game display stylesheet.
+ *
+ * @todo Refactor.
+ */
+
+.game__display {
+  display: grid;
+  grid-area: display;
+  grid-template-areas: "office interface internet";
+  grid-template-rows: 100%;
+  grid-template-columns: 0.6fr 0.1fr 0.3fr;
+  overflow: hidden;
+  background-color: $game-display-bg-colour;
+
+  .display {
+    &__banner {
+      position: fixed;
+      top: 0;
+      left: 2em;
+      display: block;
+      width: auto;
+      height: auto;
+      margin:auto;
+      color: $display-banner-text-colour;
+      text-align: center;
+      background-color: $display-banner-bg-colour;
+      border-radius: 0 0 1em 1em;
+    }
+    
+    &__environment {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-rows: 20vh 80vh;
+      grid-template-columns: 100%;
+      overflow: auto;
+
+      &#office-environment {
+        grid-area: office;
+        grid-template-areas:
+          "office-header"
+          "office-items";
+      }
+
+      &#internet-environment {
+        grid-area: internet;
+        grid-template-areas:
+          "internet-header"
+          "internet-items";
+        margin-right: $sidebar-hide-button-width;
+      }
+
+      .environment {
+        &__header {
+          display: grid;
+          grid-gap: 1em;
+          grid-template-areas:
+            "header-icon"
+            "header-title";
+          grid-template-rows: 80% 20%;
+          margin-top: 1em;
+          margin-bottom: 2em;
+          
+          &#office-header {
+            grid-area: office-header;
+          }
+
+          &#internet-header {
+            grid-area: internet-header;
+          }
+
+          .environment-header {
+            &__title {
+              grid-area: header-title;
+              color: black;
+              font-size: 2em;
+              text-align:center;
+            }
+            
+            &__icon {
+              display: block;
+              grid-area: header-icon;
+              width: auto;
+              height: 100%;
+              margin: auto;
+            }
+          }
+        }
+
+        &__assets {
+          display: grid;
+          grid-gap: 1em;
+          align-items: center;
+          justify-items: center;
+          margin: 0 2em 2em 2em;
+          padding: 1em;
+          overflow: auto;
+          border: 3px solid black;
+          border-radius: 1em;
+          
+          &#office-assets {
+            grid-area: office-items;
+          }
+          
+          &#internet-assets {
+            grid-area: internet-items;
+          }
+        }
+      }
+    }
+
+    &__interface {
+      font-size: 4em;
+      font-style: italic;
+      text-align: center;
+      background-color: $display-interface-bg-colour;
+      writing-mode: tb-rl;
+    }
+  }
+}
+
+.environment__assets .assets__asset,
+.environment__header .environment-header__image {
+  cursor: pointer;
+              
+  & .asset__icon {
+    display: block;
+    width: auto;
+    height: 125px;
+    margin: auto;
+  }
+
+  & .asset__figures {
+    position: relative;
+    top: -90%;
+    right: -70%;
+    display: block;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    background-color: black;
+    content: '0/0';
+
+    &--has-available {
+      background-color: green;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    & .asset__icon {
+      filter: drop-shadow(0 0 5px #333);
+      /*box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);*/
+    }
+  }
+}

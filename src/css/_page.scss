@@ -1,0 +1,79 @@
+/*
+ * Page layout stylesheet.
+ */
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-size: $root-font-size;
+  font-family: $font;
+
+  &__body {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "  .     main     .  "
+      "footer footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr auto 1fr;
+    height: 100%;
+    margin: 0;
+    color: $panel-text-colour;
+    background-color: $panel-bg-colour;
+  }
+
+  &__header {
+    grid-area: header;
+    margin-bottom: 2em;
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 1px solid white;
+  }
+
+  &__main {
+    display: grid;
+    grid-area: main;
+    overflow: auto;
+
+    &--form {
+      grid-template-areas:
+        "form"
+        "links";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: auto;
+    }
+
+    &--menu {
+      display: block;
+      grid-template-areas: "menu";
+      grid-template-rows: 1fr;
+      grid-template-columns: auto;
+      align-items: start;
+    }
+
+    &--game {
+      display: grid;
+      grid-template-areas: "display";
+      grid-template-rows: 100vh;
+      grid-template-columns: 100vw;
+      margin-bottom: 0;
+    }
+  }
+
+  &__footer {
+    grid-area: footer;
+    margin: 1em auto 0 auto;
+    padding: 1em 0;
+    text-align: center;
+  }
+}
+
+.splash {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-size: 10em;
+  background-color: black;
+}

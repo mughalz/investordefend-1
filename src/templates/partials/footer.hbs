@@ -1,0 +1,21 @@
+<footer class="page__footer{{#if no-back-button }} page__footer--no-back-button{{/if}}">
+
+	{{#unless no-back-button }}
+		<button class="button footer__button button--back" id="back" type="button" onclick="window.history.back()">Back</button>
+	{{/unless }}
+	
+	<ul class="footer__notes">
+	
+		{{#unless no-report-issue-link }}
+		<li class="footer__note" id="report-issue">
+			<p class="footer-note__text"><a href="report-issue.html">Report an Issue</a></p>
+		</li>
+		{{/unless}}
+		
+		<li class="footer__note" id="version-number">
+			<p class="footer-note__text">{{htmlWebpackPlugin.options.version}}</p>
+		</li>
+		
+	</ul>
+	
+</footer>

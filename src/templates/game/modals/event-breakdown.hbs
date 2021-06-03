@@ -1,0 +1,36 @@
+<section class="modal" id="event-details">
+	<section class="modal__close">
+		<button class="button modal__button modal__button--close">&#10060;</button>
+	</section>
+	
+	<header>
+	
+	  <h1 class="modal__title" id="event-name"></h1>
+	  
+	</header>
+
+	<main class="modal__content">
+	
+		<p class="modal__text"><strong>Occured in turn: <span class="text--value" id="event-turn"></span></strong></p>
+		
+		<p class="modal__text"><strong>Attributed threat actor: <span class="text--value" id="event-threat-actor"></span></strong></p>
+		<p class="modal__text"><strong>Asset targeted: <span class="text--value" id="event-asset"></span></strong></p>
+		
+		<p class="modal__text"><strong>Unmitigated cost: <span class="text--value" id="event-cost"></span></strong></p>
+		<p class="modal__text"><strong>Mitigated? <span class="text--value" id="event-mitigated"></span></strong></p>
+		<p class="modal__text" id="event-mitigated-by-label"><strong>Mitigated by: <span class="text--value" id="event-mitigated-by"></span></strong></p>
+		<p class="modal__text" id="event-mitigated-cost-label"><strong>Mitigated cost: <span class="text--value" id="event-mitigated-cost"></span></strong></p>
+		
+		<p class="modal__text" id="event-description" style="padding-top:1.5em"></p>
+		
+		<table class="table table--four-columns" id="game-events">
+		</table>
+		
+	</main>
+
+	<footer class="modal__actions">
+	
+	  <button class="button modal__button modal__button--close">Close</button>
+	  
+	</footer>
+</section>

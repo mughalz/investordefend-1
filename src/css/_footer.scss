@@ -1,0 +1,35 @@
+/*
+ * Page footer stylesheet.
+ */
+
+.page__footer .footer {
+  &__notes {
+    display: block;
+    margin: auto;
+    text-align: center;
+    list-style: none;
+    
+    & .footer__note {
+    	display: inline;
+    	vertical-align: middle;
+    	
+    	&:not(:last-of-type)::after {
+				display: inline-block;
+				content: "|";
+			}
+			
+			&#version-number {
+				font-size: 0.75em;
+				font-family: monospace;
+				
+				&::before {
+					content: 'v';
+				}
+			}
+			
+			& .footer-note__text {
+				display: inline;
+			}
+		}
+	}
+}

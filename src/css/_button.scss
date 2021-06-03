@@ -1,0 +1,89 @@
+/*
+ * Button element stylesheet.
+ */
+
+.button {
+  padding: 0.5em 2em;
+  color: $button-text-colour;
+  background-color: $button-bg-colour;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:disabled,
+  &[disabled], {
+    cursor: auto;
+    opacity: 0.3;
+  }
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.2) inset;
+  }
+
+  &:disabled:hover,
+  &[disabled]:hover, &:disabled:focus,
+  &[disabled]:focus {
+    text-decoration: none;
+    box-shadow: none;
+  }
+
+  &--half {
+    width: 48%;
+  }
+
+  &--green {
+    color: $button-green-text-colour;
+    background-color: $button-green-bg-colour;
+  }
+
+  &--back {
+    max-height: 50px;
+    margin-bottom: 1em;
+  }
+
+  &--logout {
+    margin-top: 1em;
+    margin-bottom: 0;
+    font-size: 0.8em;
+  }
+
+  &.banner__button {
+    display: inline;
+    margin: 0.5em 0.75em 0.5em 0.5em;
+    padding: 0.5em;
+    font-size: 0.8em;
+  }
+  
+  &#simulate-turn {
+    grid-area: simulate-turn;
+    height: 2.5em;
+    margin-bottom: 1em;
+  }
+
+  &#how-to-play-button {
+    margin-bottom: 1em;
+  }
+
+  &#hide-sidebar {
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: $game-sidebar-bg-colour;
+    border: 0;
+    border-right: 2px solid black;
+    border-radius: 0;
+
+    &:hover, &:focus {
+      text-decoration: none;
+      filter: brightness(0.6);
+    }
+  }
+
+  &#view-history {
+    margin: 1em 0;
+  }
+}

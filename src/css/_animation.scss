@@ -1,0 +1,35 @@
+/*
+ * Animations stylesheet.
+ */
+
+@media screen and (prefers-reduced-motion: reduce) {
+	.tile {
+		transition: none;
+	}
+	.details {
+		transition: none;
+	}
+	.game__sidebar {
+		transition: none;
+	}
+	.button#hide-sidebar > #sidebar-arrow {
+			transition: none;
+	}
+}
+
+.tile {
+  transition: 0.3s;
+}
+
+.details {
+  transition: 0.4s;
+}
+
+.game__sidebar {
+  transition: all .1s;
+}
+
+.button#hide-sidebar > #sidebar-arrow {
+	transition: .3s;
+}
+

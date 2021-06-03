@@ -1,0 +1,71 @@
+<form method="POST" name="create-new-game" id="create-new-game" class="form">
+	<h1 class="form__title">Create New Game</h1>
+	
+	<details class="details">
+		<summary class="details__summary">Organisation Settings</summary>
+
+		<div class="details__content">
+			<label class="form__label form__label--above" for="organisation-name">Organisation Name</label>
+			<input class="form__control form__input--text" type="text" name="organisation-name" id="organisation-name" placeholder="Foo Corp." required autofocus>
+			
+			<label class="form__label form__label--above" for="organisation-size">Size</label>
+			<select class="form__control form__select" name="organisation-size" id="organisation-size">
+			</select>
+			
+			<label class="form__label form__label--above" for="organisation-industry">Industry</label>
+			<select class="form__control form__select" name="organisation-industry" id="organisation-industry">
+			</select>
+			
+			<label class="form__label form__label--above" for="organisation-starting-balance">Starting Balance <span class="label__note label__note--inline">(&pound;)</span></label>
+			<input class="form__control form__input form__input--number form__input--currency" type="number" name="organisation-starting-balance" id="organisation-starting-balance" min="0" max="10000" step="0" value="0">
+			
+			<label class="form__label form__label--above" for="organisation-joining-code">Joining Code</label>
+			<input class="form__control form__input--text" type="text" name="organisation-joining-code" id="organisation-joining-code" required>
+			
+			<label class="form__label form__label--above" for="organisation-joining-password" class="optional">Joining Password</label>
+			<input class="form__control form__input--text" type="text" name="organisation-joining-password" id="organisation-joining-password">
+		</div>
+	</details>
+	
+	<details class="details">
+		<summary class="details__summary">Game Settings</summary>
+		
+		<div class="details__content">
+			<label class="form__label form__label--above" for="game-max-turns">Number of Turns</label>
+			<input class="form__control form__input form__input--number" type="number" name="game-max-turns" id="game-max-turns" min=1 max=40 value="12">
+			
+			<label class="form__label form__label--above" for="game-money-per-turn">Income per Turn <span class="label__note label__note--inline">(&pound;)</span></label>
+			<input class="form__control form__input form__input--number form__input--currency" type="number" name="game-money-per-turn" id="game-money-per-turn" min="1" max="10000" step="0" value="1000">
+			
+			<label class="form__label form__label--above" for="game-incident-min-cost">Incident Base Min. Cost <span class="label__note label__note--inline">(&pound;)</span></label>
+			<input class="form__control form__input form__input--number form__input--currency" type="number" name="game-incident-min-cost" id="game-incident-min-cost" min="1" max="10000" step="0" value="1000">
+			
+			<label class="form__label form__label--above" for="game-incident-max-cost">Incident Base Max. Cost <span class="label__note label__note--inline">(&pound;)</span></label>
+			<input class="form__control form__input form__input--number form__input--currency" type="number" name="game-incident-max-cost" id="game-incident-max-cost" min="1" max="10000" step="0" value="1000">
+		
+			<input class="form__control form__input form__input--checkbox" type="checkbox" name="game-show-available-controls" id="game-show-available-controls" checked>
+			<label class="form__label form__label--inline" for="game-show-available-controls">Show &#8470; of Available Controls</label>
+			<br>
+			
+			<input class="form__control form__input form__input--checkbox" type="checkbox" name="game-allow-unavoidable-incidents" id="game-allow-unavoidable-incidents" checked>
+			<label class="form__label form__label--inline" for="game-allow-unavoidable-incidents">Allow Unavoidable Incidents</label>
+			
+			<label class="form__label form__label--above" for="game-source">Source</label>
+			<select class="form__control form__select" name="game-source" id="game-source">
+			</select>
+			
+			<fieldset class="form__group" id="game-type">				
+			</fieldset>
+		</div>
+	</details>
+	
+	<details class="details" id="additional-organisations">
+		<summary class="details__summary">Additional Organisations <button class="form__button form__button--add" id="add-additional-organisation">+</button></summary>
+
+		
+		<div class="details__content" id="new-organisation-details">
+		</div>
+	</details>
+	
+	<input class="button form__control form__input form__input--submit" type="submit" value="Create Game"></input>
+</form>

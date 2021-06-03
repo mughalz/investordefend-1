@@ -1,0 +1,123 @@
+/*
+ * Modal stylesheet.
+ */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: none;
+  grid-gap: 1em;
+  grid-template-areas:
+    "modal-title"
+    "modal-content"
+    "modal-actions";
+  grid-template-rows: 10% 1fr 15%;
+  grid-template-columns: auto;
+  width: auto;
+  min-width: 500px;
+  max-width: 40vw;
+  height: auto;
+  min-height: 400px;
+  max-height: 60vh;
+  padding: 2em;
+  overflow: scroll;
+  text-align: center;
+  background-color: $modal-bg-colour;
+  border: 2px solid white;
+  border-radius: 25px;
+  box-shadow: 15px 15px rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, -50%);
+  resize: both;
+
+  &[draggable=true] {
+    cursor: move;
+  }
+  
+  &--wide {
+    max-width: 75vw;
+  }
+  
+  &--visible {
+    display: grid;
+  }
+	
+	&__header {
+		& .button {
+			margin-top: 1em;
+		}
+	}
+
+  &__content {
+    grid-area: modal-content;
+    text-align: center;
+
+    &--tiles {
+      display: grid;
+      grid-gap: 1em;
+      grid-template-rows: masonry;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 1em;
+      color: $tiles-text-colour;
+      background-color: $tiles-bg-colour;
+      border-radius: 1em;
+    }
+
+    & .modal__text {
+      margin: 0.5em;
+      line-height: 1.2em;
+      text-align: justify;
+    }
+
+    & .modal__list {
+      width: 60%;
+      margin: auto;
+      text-align: left;
+      list-style: circle;
+
+      &__item {
+        margin: 1em;
+      }
+    }
+  }
+
+  &__actions {
+    grid-area: modal-actions;
+    padding: 1em 0;
+  }
+
+  &__close {
+    position: absolute;
+    
+    & .modal__button--close {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 0.2em 0.3em;
+      border-radius: 50%;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__title {
+    grid-area: modal-title;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    font-size: 2em;
+    border-bottom: 1px solid white;
+  }
+
+  &__subtitle {
+    margin: 0.5em 0;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  &__chart {
+    background-color: #ddd;
+  }
+}

@@ -1,0 +1,21 @@
+/*
+ * Page header stylesheet.
+ */
+
+.page__header .header {
+	&__title {
+	  &--game {
+	    margin-bottom: 0.25em;
+	    font-weight: bold;
+	    font-size: 3em;
+	  }
+	}
+
+	&__subtitle {
+	  &--game {
+	    margin-bottom: 0.5em;
+	    font-size: 1.2em;
+	    font-style: italic;
+	  }
+	}
+}

@@ -1,0 +1,26 @@
+<section class="game__sidebar collapsed" id="game-sidebar">
+	<button
+		class="button sidebar__button"
+		id="hide-sidebar"
+		onclick="document.getElementById('game-sidebar').classList.toggle('collapsed')">
+		<span id="sidebar-arrow">&#9654; <!-- right-facing arrow --></span>
+	</button>
+	
+	<header class="sidebar__header">
+		{{> sidebar/org-stats }}
+	</header>
+
+	<main class="sidebar__main">
+	
+		{{> sidebar/controls }}
+		
+		<button class="button button--green" id="simulate-turn">Simulate Turn</button>
+		
+		{{> sidebar/event-log no-close-button=true }}
+
+	</main>
+	
+	<footer class="sidebar__footer">
+		<button class="button button--exit" id="exit" type="button">Exit</button>
+	</footer>
+</section>
