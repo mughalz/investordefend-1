@@ -4,8 +4,8 @@
   "description": "A Web client for an educational game about risk calculation.",
   "main": "src/js/app.ts",
   "scripts": {
+   "build": "NODE_ENV=production APP_PATH=https://investordefend-1-client.herokuapp.com/API_URL=https://investordefend-1-client.herokuapp.com/ webpack --config ./webpack.config.ts --mode=production",
   
-   "build": "SET NODE_ENV=production & webpack --config ./webpack.config.ts --mode=production",
     "start": "node server.js",
     "start:dev": "webpack-dev-server --config ./webpack.config.ts",
     "test": "NODE_ENV=test mocha -r ts-node/register tests/**.test.ts --exit --timeout 5000 --retries 2",
