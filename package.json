@@ -5,8 +5,6 @@
   "main": "src/js/app.ts",
   "scripts": {
     "build": "NODE_ENV=production APP_PATH=https://investordefend-1-client.herokuapp.com API_URL=https://investordefend-1-client.herokuapp.com webpack --config ./webpack.config.ts --mode=production",
-    "dev": "webpack serve",
-    "start": "node ./src/js/app.ts",
     "start:dev": "webpack-dev-server --config ./webpack.config.ts",
     "test": "NODE_ENV=test mocha -r ts-node/register tests/**.test.ts --exit --timeout 5000 --retries 2",
     "test:coverage": "NODE_ENV=test nyc npm run test",
@@ -69,7 +67,7 @@
     "@typescript-eslint/eslint-plugin": "^4.21.0",
     "@typescript-eslint/parser": "^4.20.0",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^6.4.0",
+    "copy-webpack-plugin": "^6.4.1",
     "css-loader": "^5.0.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.23.0",
@@ -85,7 +83,7 @@
     "jsonlint": "^1.6.3",
     "lint-staged": "^10.5.4",
     "markdownlint-cli": "^0.27.1",
-    "mini-css-extract-plugin": "^1.3.5",
+    "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^5.0.0",
     "nyc": "^15.1.0",
     "postcss-loader": "^4.2.0",
@@ -104,13 +102,15 @@
     "ts-node": "^9.1.1",
     "typedoc": "^0.20.35",
     "typescript": "^4.2.3",
-    "webpack": "^4.41.2",
+    "webpack": "^4.46.0",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "chart.js": "^3.2.1",
-    "jquery": "^3.5.1"
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "path": "^0.12.7"
   },
   "bugs": {
     "url": "https://delta.lancs.ac.uk/secure-digitalisation/invest-or-defend/client"
